@@ -2,9 +2,26 @@
 
 
 body {
-	background-image: 
+	background-image: url("../images/irishbackground.png-original");
 }
 
-.crystal-1 {
-	background-image: url("../assets/images/blue.png");
+.title {
+	background-color: yellow;
+	font-size: 50px;
+}
+
+.instructions {
+	background-color: #7BAFD4;
+	font-size: 18px;
+	color: white;
+	padding: 10px;
+}
+
+.guessbox {
+	background-color: white;
+	padding: 100px;
+}
+
+.currentscore {
+	
 }
