@@ -9,12 +9,14 @@ $(document).ready(function() {
 		$("#guessbox").html("<h1>" + randomNumber + "</h1>");
 		console.log(randomNumber);
 	};
-	// Sets 
-	blueNumber = Math.floor(Math.random() * (1 - 12) + 13);
-	greenNumber = Math.floor(Math.random() * (1 - 12) + 13);
-	redNumber = Math.floor(Math.random() * (1 - 12) + 13);
-	yellowNumber = Math.floor(Math.random() * (1 - 12) + 13);
+	// Sets the crystals with a random number between 1 and 12
+	blueNumber = Math.floor(Math.random() * 13);
+	greenNumber = Math.floor(Math.random() * 13);
+	redNumber = Math.floor(Math.random() * 13);
+	yellowNumber = Math.floor(Math.random() * 13);
 	console.log(blueNumber);
+
+// creates 
 
 
 ///////////// First attempt crystal number generator. ///////////////
@@ -26,8 +28,5 @@ $(document).ready(function() {
 	// };
 
 
-
-
-	crystalNumber();
 	randomNumber();
 });
