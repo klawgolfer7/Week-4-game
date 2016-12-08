@@ -9,7 +9,7 @@ $(document).ready(function() {
 		$("#guessbox").html("<h1>" + randomNumber + "</h1>");
 		console.log(randomNumber);
 	};
-
+	// Sets 
 	blueNumber = Math.floor(Math.random() * (1 - 12) + 13);
 	greenNumber = Math.floor(Math.random() * (1 - 12) + 13);
 	redNumber = Math.floor(Math.random() * (1 - 12) + 13);
@@ -17,12 +17,13 @@ $(document).ready(function() {
 	console.log(blueNumber);
 
 
-	function crystalNumber() {
-		var randomNumber = Math.floor(Math.random()*9);
-		document.getElementById("crystal-1").value = randomNumber;
-		// $("#crystal-1").value(randomNumber);
-		// console.log(randomNumber);
-	};
+///////////// First attempt crystal number generator. ///////////////
+	// function crystalNumber() {
+	// 	var randomNumber = Math.floor(Math.random()*9);
+	// 	// document.getElementById("crystal-1").value = randomNumber;
+	// 	// $("#crystal-1").value(randomNumber);
+	// 	// console.log(randomNumber);
+	// };
 
 
 
