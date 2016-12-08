@@ -10,6 +10,7 @@
 	src="https://code.jquery.com/jquery-3.1.1.min.js"
 	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
 	crossorigin="anonymous"></script>
+	<script src="assets/js/game.js"></script>
 </head>
 <body>
 <br>
@@ -18,7 +19,7 @@
 		<div class="title col-md-3">Crystals Collector</div>
 	</div>
 	<br>
-	<div class="row instructions col-md-10">
+	<div class="row instructions col-md-12">
 		<div>
 		<p>You will be given a random number at the start of the game.</p>
 		<p>There are four crystals below. By clicking on a crystal you will
@@ -29,23 +30,30 @@
 		<p>Each time when the game starts, the game will change the values of each crystal</p>
 		</div>
 	</div>
+	<hr>
 	<!-- Random number and wins/losses row -->
 	<br>
 	<div class="row">
 		<!-- Random number that you have to land on to win -->
-		<div class="col-md-6 guessbox">RANDOM NUMBER</div>
+		<div class="col-md-4" id="guessbox">RANDOM NUMBER</div>
 		<!-- Wins/Losses column -->
-		<div class="col-md-4"></div>
+		<div class="col-md-4" id="win-loss">
+			Wins:<div id="wins"></div>
+			<br>
+			Losses: <div id="losses"></div>
+
+		</div>
 	</div>
 	<!-- Crystal buttons -->
 	<div class="row">
-		<div class="col-md-1 crystal-1"><input type="image" src="assets/images/blue.png"></div>		
-		<div class="col-md-1 crystal-2"><input type="image" src="assets/images/green.png"></div>
-		<div class="col-md-1 crystal-3"><input type="image" src="assets/images/red.png"></div>
-		<div class="col-md-1 crystal-4"><input type="image" src="assets/images/yellow.png"></div>		
+		<div class="col-md-3" id="crystal-1" type="number" value="0"><input type="image" src="assets/images/blue.png"></div>		
+		<div class="col-md-3" id="crystal-2"><input type="image" src="assets/images/green.png"></div>
+		<div class="col-md-3" id="crystal-3"><input type="image" src="assets/images/red.png"></div>
+		<div class="col-md-3" id="crystal-4"><input type="image" src="assets/images/yellow.png"></div>		
 	</div>
 	<!-- Total score -->
-	<div class="row currentscore">Your total score is:</div>
+	<div class="row col-md-4" id="currentscorebox">Your total score is: <div id="currentscore"></div>
+	</div>
 	<!-- Current score -->
 	<div class="row"></div>
 	<br>

@@ -17,11 +17,24 @@ body {
 	padding: 10px;
 }
 
-.guessbox {
-	background-color: white;
-	padding: 100px;
+#guessbox {
+	background-color: green;
+	padding: 50px;
+	color: white;
+
 }
 
-.currentscore {
-	
+#win-loss {
+	background-color: blue;
+	padding: 50px;
+	color: white;
+	font-size: 30px;
+
+}
+
+#currentscorebox {
+	background-color: blue;
+	padding: 25px;
+	color: white;
+	font-size: 20px;
 }
