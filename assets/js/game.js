@@ -10,26 +10,46 @@ $(document).ready(function() {
 		console.log(randomNumber);
 	};
 	// Sets the crystals with a random number between 1 and 12
-	var blueNumber = Math.floor(Math.random() * 13);
-	var greenNumber = Math.floor(Math.random() * 13);
-	var yellowNumber = Math.floor(Math.random() * 13);
-	var redNumber = Math.floor(Math.random() * 13);
-	console.log(blueNumber);
+	var blueNumber = function() {return Math.floor(Math.random() * 13); }; 
+	var greenNumber = function() {return Math.floor(Math.random() * 13); };
+	var yellowNumber = function() {return Math.floor(Math.random() * 13); };
+	var redNumber = function() {return Math.floor(Math.random() * 13); };
 
-// creates click function for the buttons that . 
-	$("#blueButton").on("click" function() {
-		$(this).attr("blueNumber")
+// creates click function for the buttons that push 1-12 number into crystal. 
+	$("#blueButton").on("click", function() {
+		$(this).data("num",blueNumber() );
+		console.log($(this).data("num"));
 	});
-	$("#redButton").on("click" function() {
-		$(this).attr("greenNumber")
+	$("#greenButton").on("click", function() {
+		$(this).data("num",greenNumber() );
 	});
-	$("#yellowButton").on("click" function() {
-		$(this).attr("yellowNumber")
+	$("#yellowButton").on("click", function() {
+		$(this).data("num",yellowNumber() );
 	});
-	$("#greenButton").on("click" function() {
-		$(this).attr("redNumber")
+	$("#redButton").on("click", function() {
+		$(this).data("num",redNumber() );
 	});
+
+	$("#blueButton").data("#currentscore")
+
+
+	// function to add numbers together on clicks in the currentscorebox to 
+	function addCurrentScore () {
+
+	}
+
+
+
+
+
+
 
 
 	randomNumber();
 });
+
+
+
+
+
+
