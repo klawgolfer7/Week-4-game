@@ -10,22 +10,25 @@ $(document).ready(function() {
 		console.log(randomNumber);
 	};
 	// Sets the crystals with a random number between 1 and 12
-	blueNumber = Math.floor(Math.random() * 13);
-	greenNumber = Math.floor(Math.random() * 13);
-	redNumber = Math.floor(Math.random() * 13);
-	yellowNumber = Math.floor(Math.random() * 13);
+	var blueNumber = Math.floor(Math.random() * 13);
+	var greenNumber = Math.floor(Math.random() * 13);
+	var yellowNumber = Math.floor(Math.random() * 13);
+	var redNumber = Math.floor(Math.random() * 13);
 	console.log(blueNumber);
 
-// creates 
-
-
-///////////// First attempt crystal number generator. ///////////////
-	// function crystalNumber() {
-	// 	var randomNumber = Math.floor(Math.random()*9);
-	// 	// document.getElementById("crystal-1").value = randomNumber;
-	// 	// $("#crystal-1").value(randomNumber);
-	// 	// console.log(randomNumber);
-	// };
+// creates click function for the buttons that . 
+	$("#blueButton").on("click" function() {
+		$(this).attr("blueNumber")
+	});
+	$("#redButton").on("click" function() {
+		$(this).attr("greenNumber")
+	});
+	$("#yellowButton").on("click" function() {
+		$(this).attr("yellowNumber")
+	});
+	$("#greenButton").on("click" function() {
+		$(this).attr("redNumber")
+	});
 
 
 	randomNumber();
