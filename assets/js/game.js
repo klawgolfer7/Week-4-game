@@ -1,51 +1,75 @@
 $(document).ready(function() {
 
-	var wincounter = 0;
-	var losecounter = 0;
+	var winCounter = 0;
+	var loseCounter = 0;
+	var randomNumber;
+	var crystalSum;
  
 	// Function that created the random number that needs to be landed on
 	function randomNumber() {
-		var randomNumber = Math.floor(Math.random()*(112 - 19) + 19);
-		$("#guessbox").html("<h1>" + randomNumber + "</h1>");
+		randomNumber = Math.floor(Math.random()*(112 - 19) + 19);
+		$("#guessbox").html("<h2>Number to land on: </h2>" + "<h1>" + randomNumber + "</h1>");
 		console.log(randomNumber);
 	};
+	// Calls randomNumber function to initiate random number
+	randomNumber();
 	// Sets the crystals with a random number between 1 and 12
-	var blueNumber = function() {return Math.floor(Math.random() * 13); }; 
-	var greenNumber = function() {return Math.floor(Math.random() * 13); };
-	var yellowNumber = function() {return Math.floor(Math.random() * 13); };
-	var redNumber = function() {return Math.floor(Math.random() * 13); };
+	blueNumber = Math.floor(Math.random() * 13); 
+	greenNumber = Math.floor(Math.random() * 13); 
+	yellowNumber = Math.floor(Math.random() * 13); 
+	redNumber = Math.floor(Math.random() * 13); 
 
+
+	crystalSum = 0;
 // creates click function for the buttons that push 1-12 number into crystal. 
 	$("#blueButton").on("click", function() {
-		$(this).data("num",blueNumber() );
-		console.log($(this).data("num"));
+		crystalSum = Number(crystalSum) + Number(blueNumber);
+		$("#currentScore").html(crystalSum)
+		gameComplete();
 	});
 	$("#greenButton").on("click", function() {
-		$(this).data("num",greenNumber() );
+		crystalSum = Number(crystalSum) + Number(greenNumber);
+		$("#currentScore").html(crystalSum);
+		gameComplete();
 	});
 	$("#yellowButton").on("click", function() {
-		$(this).data("num",yellowNumber() );
+		crystalSum = Number(crystalSum) + Number(yellowNumber);
+		$("#currentScore").html(crystalSum);
+ 		gameComplete();
 	});
 	$("#redButton").on("click", function() {
-		$(this).data("num",redNumber() );
+		crystalSum = Number(crystalSum) + Number(redNumber);
+		$("#currentScore").html(crystalSum);
+		gameComplete();
 	});
 
-	$("#blueButton").data("#currentscore")
+	function gameComplete() {
+		if (crystalSum === randomNumber) {
+			winCounter++;
+			$("#wins").html(winCounter);
+			alert("You have great math skills! Nice job on the win!");
+			crystalSum = 0;
+			$("#currentScore").html(crystalSum);
+			randomNumber = Math.floor(Math.random()*(112 - 19) + 19);
+			$("#guessbox").html("<h2>Number to land on: </h2>" + "<h1>" + randomNumber + "</h1>");
 
 
-	// function to add numbers together on clicks in the currentscorebox to 
-	function addCurrentScore () {
+		};	
 
-	}
+		if (crystalSum > randomNumber) {
+			loseCounter++;
+			$("#losses").html(loseCounter);
+			alert("Sorry you lost. No crystals for you!");
+			crystalSum = 0;
+			$("#currentScore").html(crystalSum);
+			randomNumber = Math.floor(Math.random()*(112 - 19) + 19);
+			$("#guessbox").html("<h2>Number to land on: </h2>" + "<h1>" + randomNumber + "</h1>");
+
+		}
+	};
 
 
 
-
-
-
-
-
-	randomNumber();
 });
 
 
