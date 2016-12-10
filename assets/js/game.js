@@ -21,27 +21,32 @@ $(document).ready(function() {
 
 
 	crystalSum = 0;
-// creates click function for the buttons that push 1-12 number into crystal. 
-	$("#blueButton").on("click", function() {
-		crystalSum = Number(crystalSum) + Number(blueNumber);
-		$("#currentScore").html(crystalSum)
-		gameComplete();
-	});
-	$("#greenButton").on("click", function() {
-		crystalSum = Number(crystalSum) + Number(greenNumber);
-		$("#currentScore").html(crystalSum);
-		gameComplete();
-	});
-	$("#yellowButton").on("click", function() {
-		crystalSum = Number(crystalSum) + Number(yellowNumber);
-		$("#currentScore").html(crystalSum);
- 		gameComplete();
-	});
-	$("#redButton").on("click", function() {
-		crystalSum = Number(crystalSum) + Number(redNumber);
-		$("#currentScore").html(crystalSum);
-		gameComplete();
-	});
+
+	function addNumberToButtons () {
+	// creates click function for the buttons that push 1-12 number into crystal. 
+		$("#blueButton").on("click", function() {
+			crystalSum = Number(crystalSum) + Number(blueNumber);
+			$("#currentScore").html(crystalSum)
+			gameComplete();
+		});
+		$("#greenButton").on("click", function() {
+			crystalSum = Number(crystalSum) + Number(greenNumber);
+			$("#currentScore").html(crystalSum);
+			gameComplete();
+		});
+		$("#yellowButton").on("click", function() {
+			crystalSum = Number(crystalSum) + Number(yellowNumber);
+			$("#currentScore").html(crystalSum);
+	 		gameComplete();
+		});
+		$("#redButton").on("click", function() {
+			crystalSum = Number(crystalSum) + Number(redNumber);
+			$("#currentScore").html(crystalSum);
+			gameComplete();
+		});
+	}
+
+	addNumberToButtons();
 
 	function gameComplete() {
 		if (crystalSum === randomNumber) {
@@ -54,6 +59,7 @@ $(document).ready(function() {
 			$("#guessbox").html("<h2>Number to land on: </h2>" + "<h1>" + randomNumber + "</h1>");
 
 
+
 		};	
 
 		if (crystalSum > randomNumber) {
@@ -64,6 +70,8 @@ $(document).ready(function() {
 			$("#currentScore").html(crystalSum);
 			randomNumber = Math.floor(Math.random()*(112 - 19) + 19);
 			$("#guessbox").html("<h2>Number to land on: </h2>" + "<h1>" + randomNumber + "</h1>");
+			document.getElementByClassName("col-md-1").removeAttribute("")
+			addNumberToButtons();
 
 		}
 	};
